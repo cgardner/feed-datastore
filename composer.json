@@ -1,0 +1,19 @@
+{
+    "name": "cumula/feed-datastore",
+    "description": "SimplePie-based Feeds DataStore for Cumula",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "http://github.com/Cumula/cumula-core.git"
+        }
+    ],
+    "require": {
+        "cumula/core": "dev-features/composer",
+        "kriswallsmith/buzz": "0.5"
+    },
+    "cumula": {
+        "component": true,
+        "what": "more"
+    }
+}
+

@@ -1,11 +1,9 @@
 <?php
 
-require_once 'Cumula/Test/Base.php';
-
 use \FeedDataStore\FeedDataStore as DS;
 
 
-class Test_FeedDataStoreFactory extends Test_BaseTest {
+class Test_FeedDataStoreFactory extends \Cumula\Test\Base {
 
 	public function testConstructor() {
 		$ds = new DS();
