@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "cumula/core": "dev-features/composer",
-    },
+        "cumula/core": "dev-features/composer"
+    }
 }
 
