@@ -1,5 +1,5 @@
 <?php
-namespace FeedDataStoreFactory;
+namespace FeedDataStore;
 
 require_once dirname(__FILE__) . '/lib/SimplePie.compiled.php';
 

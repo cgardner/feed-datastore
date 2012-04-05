@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="Feeds DataStore" default="test">
-    <property file="build.properties" />
 
+    <!-- Perform Automated Tests -->
+    <target name="test" depends="test.prepare" description="Run the Automated Tests and generate reports">
+      <if>
+        <not><isset property="test.class"/></not>
+        <then>
+          <property name="test.class" value="*" />
+        </then>
+      </if>
+      <phingCall target="test.execute" />
+    </target>
+    
     <target name="test.prepare" description="Prepare to run the Automated Tests">
       
     </target>
 
-    
     <!-- Execute Unit Tests -->
     <target name="test.execute" description="Execute unit tests">
       <fail unless="test.class" msg="No Class available to Test" />
-      
-      <if>
-        <and>
-          <not><isset property="test.coverage" /></not>
-          <equals arg1="${test.buildreport}" arg2="y" casesensitive="false" />
-        </and>
-        <then>
-          <property name="test.coverage" value="false" />
-        </then>
-        <else>
-          <property name="test.coverage" value="true" />
-        </else>
-      </if>
-      
+            
       <!-- Run the automated tests -->
       <phpunit haltonerror="false" haltonfailure="false" codecoverage="false"
                haltonskipped="false" bootstrap="${project.basedir}/test_bootstrap.php">
@@ -40,17 +36,4 @@
       
     </target>
 
-    <!-- Perform Automated Tests -->
-    <target name="test" depends="test.prepare" description="Run the Automated Tests and generate reports">
-      <if>
-        <not><isset property="test.class"/></not>
-        <then>
-          <property name="test.class" value="*" />
-        </then>
-      </if>
-      <phingCall target="test.execute">
-        <property name="test.coverage" value="true" />
-        <property name="test.buildreport" value="y" />
-      </phingCall>
-    </target>
 </project>

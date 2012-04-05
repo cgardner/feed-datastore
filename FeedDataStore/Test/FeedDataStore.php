@@ -7,7 +7,7 @@ class Test_FeedDataStoreFactory extends \Cumula\Test\Base {
 
 	public function testConstructor() {
 		$ds = new DS();
-		$this->assertInstance($ds, 'FeedDataStoreFactory\FeedDataStoreFactory');
+		$this->assertInstance($ds, 'FeedDataStore\FeedDataStore');
 	}
 
 	public function testQueryRss() {
@@ -27,6 +27,7 @@ class Test_FeedDataStoreFactory extends \Cumula\Test\Base {
 	}
 
 	public function testQueryAtom() {
+		$ds = new DS();
 		$config = array(
 			'url' => realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'test.atom'
 			);

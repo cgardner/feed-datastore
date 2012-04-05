@@ -9,11 +9,6 @@
     ],
     "require": {
         "cumula/core": "dev-features/composer",
-        "kriswallsmith/buzz": "0.5"
     },
-    "cumula": {
-        "component": true,
-        "what": "more"
-    }
 }
 
