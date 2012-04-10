@@ -9,6 +9,9 @@
     ],
     "require": {
         "cumula/core": "dev-features/composer"
+    },
+    "autoload": {
+        "psr-0": {"FeedDataStore": ""}
     }
 }
 
